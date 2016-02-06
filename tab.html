@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <!--<link rel="stylesheet" href="css/base.min.css"/>-->
+        <link rel="stylesheet" href="css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="css/likedevtool.css"/>
+        <link rel="stylesheet" href="css/tree.css"/>
+        <script src="lib/core.lite.js"></script>
+        <script src="javascript/ui/tab.js"></script>
+        <script src="javascript/ui/jsontree.js"></script>
+        <script src="javascript/info.js"></script>
+        <script src="javascript/ui.js"></script>
+    </head>
+    <body>
+        <div class="left">
+            <div class="btns">
+                <div class="tbtn cleanandrefresh"><i class="fa fa-repeat"></i></div>
+                <div class="tbtn reloadcss">CSS</div>
+            </div>
+            <ul class="list">
+                <li to="one"><i class="fa fa-archive"></i> Adapts</li>
+                <li to="two"><i class="fa fa-puzzle-piece"></i> Options</li>
+                <li to="five"><i class="fa fa-cubes"></i> Require</li>
+                <li to="six"><i class="fa fa-file-code-o"></i> Template</li>
+                <li to="seven"><i class="fa fa-code"></i> JSON</li>
+                <li to="three"><i class="fa fa-hdd-o"></i> Resource</li>
+                <li to="four"><i class="fa fa-cog"></i> Setting</li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="tab one">
+                <div class="r-left">
+                    <div class="head">
+                        <div class="loadinfo"><i class='fa fa-refresh'></i></div>
+                        <div class="loadpacket">Adapt list</div>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="filter"/>
+                    </div>
+                    <div class="content"></div>
+                </div>
+                <div class="r-right">
+                    <div class="head adaptname"></div>
+                    <div class="content noye">
+                        <div class="usetab" style="top:-3px;">
+                            <div class="titles">
+                                <div class="tabtitle active">extend</div>
+                                <div class="tabtitle">option</div>
+                                <div class="tabtitle">method</div>
+                                <div class="tabtitle">privator</div>
+                                <div class="tabtitle">staticor</div>
+                            </div>
+                            <div class="tabs">
+                                <div class="tabcon">
+                                    <div class="basicinfo" style='margin-left:-3px;'></div>
+                                </div>
+                                <div class="tabcon">
+                                    <div class="optioninfo"></div>
+                                </div>
+                                <div class="tabcon">
+                                    <div class="methodinfo"></div>
+                                </div>
+                                <div class="tabcon">
+                                    <div class="privateinfo"></div>
+                                </div>
+                                <div class="tabcon">
+                                    <div class="staticinfo"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab two">
+                <div class="r-left">
+                    <div class="head">
+                        <div class="loadinfo"><i class='fa fa-refresh'></i></div>
+                        <div class="loadpacket">Option list</div>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="filter"/>
+                    </div>
+                    <div class="content"></div>
+                </div>
+                <div class="r-right">
+                    <div class="head adaptname"></div>
+                    <div class="content tree noye"></div>
+                </div>
+            </div>
+            <div class="tab three">
+                <div class="r-left" style="width:100%;">
+                    <div class="head">
+                        <div class="loadinfo"><i class='fa fa-refresh'></i></div>
+                        <div class="loadpacket">Packet list</div>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="filter"/>
+                    </div>
+                    <div class="content" style='margin-top:-6px;'></div>
+                </div>
+            </div>
+            <div class="tab four">
+                <div class="r-left" style="width:100%;">
+                    <div class="content" style="top:-3px;">
+                        <div class="usetab">
+                            <div class="titles">
+                                <div class="tabtitle active">Clean Cache</div>
+                            </div>
+                            <div class="tabs">
+                                <div class="tabcon">
+                                    <div style="padding:5px">
+                                        <div style='line-height:30px;'>Clean Time</div>
+                                        <select class="cleantime">
+                                            <option value="1">an hour</option>
+                                            <option value="24">a day</option>
+                                            <option value="168">a week</option>
+                                            <option value="672">a month</option>
+                                            <option value="0">all</option>
+                                        </select>
+                                    </div>
+                                    <div class="xtitle active cct"><i class='fa fa-caret-right'></i> clean type</div>
+                                    <div class="basicinfo2">
+                                        <div class="line">
+                                            <label><input type="checkbox" value="appcache"/> appcache</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="cache"/> cache</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="cookies"/> cookies</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="downloads"/> downloads</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="fileSystems"/> fileSystems</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="formData"/> formData</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="history"/> history</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="indexedDB"/> indexedDB</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="localStorage"/> localStorage</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="pluginData"/> pluginData</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="passwords"/> passwords</label>
+                                        </div>
+                                        <div class="line">
+                                            <label><input type="checkbox" value="webSQL"/> webSQL</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab five">
+                <div class="r-left">
+                    <div class="head">
+                        <div class="loadinfo"><i class='fa fa-refresh'></i></div>
+                        <div class="loadpacket">Require list</div>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="filter"/>
+                    </div>
+                    <div class="content"></div>
+                </div>
+                <div class="r-right">
+                    <div class="head adaptname"></div>
+                    <div class="content tree noye"></div>
+                </div>
+            </div>
+            <div class="tab six">
+                <div class="r-left">
+                    <div class="head">
+                        <div class="loadinfo"><i class='fa fa-refresh'></i></div>
+                        <div class="loadpacket">Dom list</div>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="filter"/>
+                    </div>
+                    <div class="content"></div>
+                </div>
+                <div class="r-right">
+                    <div class="head adaptname"></div>
+                    <div class="content tree noye" style='padding:10px'></div>
+                </div>
+            </div>
+            <div class="tab seven">
+                <div class="r-left">
+                    <div class="head">
+                        <div class="loadinfo"><i class='fa fa-refresh'></i></div>
+                        <div class="loadpacket">Dom list</div>
+                    </div>
+                    <div class="input">
+                        <input type="text" placeholder="filter"/>
+                    </div>
+                    <div class="content"></div>
+                </div>
+                <div class="r-right">
+                    <div class="head adaptname"></div>
+                    <div class="content tree noye" style='padding:10px'></div>
+                </div>
+            </div>
+        </div>
+        <<div class="mainmask">
+            <div class="labelx">
+                <div class="logo"></div>
+                <div class="title getrocuilink">This page has no <span class="xttx">brooder</span> supported or it is not debuged.</div>
+            </div>
+        </div>
+    </body>
+</html>

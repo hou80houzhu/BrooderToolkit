@@ -1,0 +1,17 @@
+.tree .node .name {
+  line-height: 20px;
+  cursor: default; }
+.tree .node > .list {
+  margin-left: 10px;
+  display: none; }
+  .tree .node > .list .name {
+    color: #B771BD; }
+    .tree .node > .list .name > i {
+      color: black; }
+.tree .node.active > .name > i {
+  -webkit-transform: rotate(90deg); }
+.tree .node.active > .list {
+  display: block; }
+.tree .node span {
+  color: black;
+  padding: 0 3px 0 3px; }
