@@ -1,3 +1,3 @@
-<img src='https://github.com/hou80houzhu/BrooderToolkit/raw/master/images/128.png' alt='photocutter'>
-# BrooderToolkit
+![brooderbuilder](https://github.com/hou80houzhu/BrooderToolkit/raw/master/images/logo.png) 
+
 Chrome Develop Toolkit for Brooder Projects
