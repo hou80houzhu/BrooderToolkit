@@ -1,6 +1,6 @@
 var infos = {
     check: function () {
-        return window.brooder && window.brooder.debug && window.brooder.debug.modules;
+        return window.packet && window.packet.debug && window.packet.debug.modules;
     },
     inspectHost: function () {
         return window.location.host;
@@ -264,13 +264,13 @@ var infos = {
                                 var t = value.split(":");
                                 if (t.length > 1) {
                                     if (n._packets_[t[1]]) {
-                                        console.info("[brooder] maybe the packet with name of " + n.packet + " contain duplicate packet shortname,it is " + t[1]);
+                                        console.info("[packet] maybe the packet with name of " + n.packet + " contain duplicate packet shortname,it is " + t[1]);
                                     }
                                     n._packets_[t[1]] = t[0];
                                 } else {
                                     var m = t[0].split("\.");
                                     if (n._packets_[m[m.length - 1]]) {
-                                        console.info("[brooder] maybe the packet with name of " + n.packet + " contain duplicate packet shortname,it is " + m[m.length - 1]);
+                                        console.info("[packet] maybe the packet with name of " + n.packet + " contain duplicate packet shortname,it is " + m[m.length - 1]);
                                     }
                                     n._packets_[m[m.length - 1]] = t[0];
                                 }
@@ -298,7 +298,7 @@ var infos = {
                     if (n._packets_[index]) {
                         return "\"" + n._packets_[index] + "." + key + "\"";
                     } else {
-                        throw Error("[brooder] packet can not find with tag of " + str + ",packet is " + n.packet);
+                        throw Error("[packet] packet can not find with tag of " + str + ",packet is " + n.packet);
                     }
                 }).replace(packet.isCurrentTag, function (str) {
                     return "\"" + n.packet + "." + str.split("\.")[1];
@@ -306,9 +306,9 @@ var infos = {
 
                 var xcode = "//# sourceURL=" + js + "\r\n$.___info=info;\r\n" + str + "\r\n$.___info=null;";
                 try {
-                    (new Function("info", "$", xcode))(n, brooder);
+                    (new Function("info", "$", xcode))(n, packet);
                 } catch (e) {
-                    brooder.___info = null;
+                    packet.___info = null;
                     console.error(e.stack);
                 }
             }

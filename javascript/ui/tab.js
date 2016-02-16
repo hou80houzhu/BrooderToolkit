@@ -57,4 +57,4 @@
             $(this).tab();
         });
     });
-})(brooder);
+})(packet);
