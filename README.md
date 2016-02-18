@@ -2,4 +2,4 @@
 
 Chrome Develop Toolkit for PacketJS Projects
 
-[Download chrome extension](https://github.com/hou80houzhu/packet/raw/master/chromextension/packetToolkit.crx "Download chrome extension")
+[Install chrome extension](https://chrome.google.com/webstore/detail/packettoolkit/ckbkhdkcpgjjjdjiajmejacbedlfmphk "Install chrome extension")
