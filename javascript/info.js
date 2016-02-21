@@ -1,6 +1,6 @@
 var infos = {
     check: function () {
-        return window.packet && window.packet.debug && window.packet.debug.modules;
+        return window.axes && window.axes.debug && window.axes.debug.modules;
     },
     inspectHost: function () {
         return window.location.host;
