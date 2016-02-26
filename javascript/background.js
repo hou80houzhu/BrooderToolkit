@@ -81,7 +81,7 @@ var handler = {
             console.log(message.data);
         } else if (message.type === "openrocui") {
             chrome.tabs.create({
-                url: "http://www.axesjs.org"
+                url: "http://www.brightjs.org"
             });
         }
     },

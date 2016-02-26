@@ -484,4 +484,4 @@ var setCheckbox = function () {
             });
         });
     });
-})(axes);
+})(bright);

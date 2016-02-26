@@ -1,6 +1,6 @@
 var infos = {
     check: function () {
-        return window.axes && window.axes.debug && window.axes.debug.modules;
+        return window.bright && window.bright.debug && window.bright.debug.modules;
     },
     inspectHost: function () {
         return window.location.host;
