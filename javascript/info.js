@@ -207,19 +207,20 @@ var infos = {
         });
     },
     reloadPreCss: function (css) {
-        var dstr = "<div id='___rocui_debug___' style='" +
+        var dstr = "<div id='___brighttoolkit___' style='" +
                 "-webkit-box-shadow:0 0 15px #00A185;font-family: proxima-nova,Helvetica, Arial, sans-serif;" +
                 "background:#24D0AE;color:black;line-height:25px;padding:0 10px 0 10px;border-top:1px solid #00A185;" +
                 "-webkit-transition:all .5s ease-out;" +
                 "font-size:12px;position:fixed;left:0;right:0;bottom:0;" +
-                "'><i class='fa fa-refresh fa-spin'></i> ROCUI Debuger:Loading Javascript...</div>";
-        var loadingbar = $(dstr).appendTo("body");
+                "'><i class='fa fa-refresh fa-spin'></i> BrightToolkit:Loading Css...</div>";
+        var loadingbar = $(dstr).appendTo("body"),has=false;
         $("link").each(function () {
             var a = $(this).attr("href").split("?")[0];
             if (a === css) {
+                has=true;
                 $(this).remove();
                 $("<link href='"+a+ "?reload=" + Math.round(Math.random() * 1000000000)+"' type='text/css' rel='stylesheet'>").bind("load",function(){
-                    loadingbar.html("ROCUI Debuger:File loaded");
+                    loadingbar.html("BrightToolkit:File loaded");
                     setTimeout(function () {
                         loadingbar.bind("webkitTransitionEnd", function () {
                             loadingbar.remove();
@@ -228,20 +229,23 @@ var infos = {
                 }).appendTo("head");
             }
         });
+        if(!has){
+            loadingbar.remove();
+        }
     },
     reloadPreJs: function (js) {
-        var dstr = "<div id='___rocui_debug___' style='" +
+        var dstr = "<div id='___brighttoolkit___' style='" +
                 "-webkit-box-shadow:0 0 15px #00A185;font-family: proxima-nova,Helvetica, Arial, sans-serif;" +
                 "background:#24D0AE;color:black;line-height:25px;padding:0 10px 0 10px;border-top:1px solid #00A185;" +
                 "-webkit-transition:all .5s ease-out;z-index:999999999;" +
                 "font-size:12px;position:fixed;left:0;right:0;bottom:0;" +
-                "'><i class='fa fa-refresh fa-spin'></i> ROCUI Debuger:Loading Javascript...</div>";
+                "'><i class='fa fa-refresh fa-spin'></i> BrightToolkit:Loading Javascript...</div>";
         var loadingbar = $(dstr).appendTo("body");
         $.ajax({
             url: js,
             dataType: "text",
             success: function (str) {
-                loadingbar.html("ROCUI Debuger:File loaded");
+                loadingbar.html("BrightToolkit:File loaded");
                 setTimeout(function () {
                     loadingbar.bind("webkitTransitionEnd", function () {
                         loadingbar.remove();
